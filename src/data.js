@@ -173,8 +173,23 @@ export const newsletter = {
   img2: "/top category/image5.png",
 };
 
-export const blog=[
+export const blog = [
   {
-    img:'/blog/Frame 3.png'
-  }
-]
+    img: "/blog/Frame 3.png",
+    name: "Saber Ali",
+    title: "Top Essentials Trends in 2021",
+    text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of",
+  },
+  {
+    img: "/blog/Frame2.png",
+    name: "Saber Ali",
+    title: "Top Essentials Trends in 2021",
+    text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of",
+  },
+  {
+    img: "/blog/Frame1.png",
+    name: "Saber Ali",
+    title: "Top Essentials Trends in 2021",
+    text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of",
+  },
+];
