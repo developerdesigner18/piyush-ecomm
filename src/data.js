@@ -179,17 +179,114 @@ export const blog = [
     name: "Saber Ali",
     title: "Top Essentials Trends in 2021",
     text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of",
+    id: 0,
   },
   {
     img: "/blog/Frame2.png",
     name: "Saber Ali",
     title: "Top Essentials Trends in 2021",
     text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of",
+    id: 1,
   },
   {
     img: "/blog/Frame1.png",
     name: "Saber Ali",
     title: "Top Essentials Trends in 2021",
     text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of",
+    id: 2,
+  },
+];
+export const accessories = [
+  {
+    img: "/accessories/image 9.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image10.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image11.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image12.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image1.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image2.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image3.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image4.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image5.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image6.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "sollictidum elit esumond",
+  },
+  {
+    img: "/accessories/image7.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "vel elit esumond",
+  },
+  {
+    img: "/accessories/image8.png",
+    newprice: "$25",
+    Price: "$45",
+    title: "ultrices condetioum ",
+  },
+];
+export const bag = [
+  {
+    major: [
+      {
+        img: "/bag/bag4.png",
+        newprice: "$25",
+        Price: "$45",
+        title: "bag ",
+        text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of",
+      },
+    ],
+  },
+  {
+    minor: [
+      { img: "/bag/bag1.png" },
+      { img: "/bag/bag2.png" },
+      { img: "/bag/bag3.png" },
+    ],
   },
 ];

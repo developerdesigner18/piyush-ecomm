@@ -1,4 +1,3 @@
-import { Image } from "@mui/icons-material";
 import { Grid, Paper, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { featureProduct } from "../../data";
@@ -31,7 +30,7 @@ const FeatureProduct = () => {
             return (
               <Box key={index} width="270px">
                 <Grid container>
-                  <Grid item xs={3}>
+                  <Grid item md={3} xs={6} sm={4}>
                     <img
                       src={product.img}
                       alt="logo"

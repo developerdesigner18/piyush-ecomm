@@ -28,7 +28,7 @@ const TopCategory = () => {
             return (
               <Box key={index} width="270px">
                 <Grid container>
-                  <Grid item xs={3}>
+                  <Grid item md={3} xs={12} sm={12}>
                     <img
                       src={product.img}
                       alt="logo"

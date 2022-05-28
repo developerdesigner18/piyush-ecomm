@@ -1,7 +1,42 @@
 import { Grid, Paper, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { blog } from "../../data";
+import { useState } from "react";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 const Blog = () => {
+  const blogdata = blog;
+  console.log(blogdata);
+  const [open, setOpen] = useState();
+  const [read, setRead] = useState(false);
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const d = new Date();
+  let month = months[d.getMonth() + 1];
+  let year = d.getFullYear();
+  let date = d.getDate();
+
+  const readonly = (id) => {
+    const blogs = [...blogdata];
+    blogs.map((blog) => {
+      if (blog.id === id) {
+        setRead((prev) => !prev);
+        setOpen(blog.id);
+      }
+    });
+  };
   return (
     <>
       <Typography
@@ -28,11 +63,11 @@ const Blog = () => {
             textDecoration: "none",
           }}
         >
-          {blog.map((product, index) => {
+          {blogdata.map((product, index) => {
             return (
               <Box key={index}>
                 <Grid container>
-                  <Grid item xs={3}>
+                  <Grid item md={3} xs={12} sm={12}>
                     <img
                       src={product.img}
                       alt="logo"
@@ -40,12 +75,48 @@ const Blog = () => {
                       width="370px"
                     />
                     <Paper sx={{ width: "370px", mb: 30 }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          margin: "5px",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontFamily: "Josefin Sans",
+                            fontSize: 14,
+                            color: "#151875",
+                            marginRight: "10px",
+                          }}
+                        >
+                          {product.name}
+                        </Typography>
+                        <CalendarMonthIcon
+                          sx={{
+                            width: "11px",
+                            height: "11px",
+                            color: "#FFA454",
+                            justifyContent: "center",
+                            mt: "5px",
+                            mr: "2px",
+                          }}
+                        />
+                        <Typography
+                          sx={{
+                            fontFamily: "Josefin Sans",
+                            fontSize: 14,
+                            color: "#151875 30%",
+                          }}
+                        >
+                          {date + "  " + month + "," + year}
+                        </Typography>
+                      </div>
                       <Typography
                         sx={{
-                          fontFamily: "Lato",
+                          fontFamily: "Josefin Sans",
                           fontWeight: 700,
                           fontSize: 18,
-                          color: "#FB2E86",
+                          color: "#111C85",
                         }}
                       >
                         {product.title}
@@ -54,7 +125,7 @@ const Blog = () => {
                         sx={{
                           fontFamily: "Josefin Sans",
                           fontSize: 14,
-                          color: "#151875",
+                          color: "#72718F",
                         }}
                       >
                         {product.text}
@@ -68,6 +139,23 @@ const Blog = () => {
                       >
                         {product.Price}
                       </Typography>
+                      <Typography
+                        sx={{
+                          fontFamily: "Josefin Sans",
+                          fontSize: 14,
+                          color: "#151875",
+                          mt: "5px",
+                        }}
+                        onClick={() => readonly(product.id)}
+                      >
+                        Read More ...
+                      </Typography>
+                      {read && open === product.id && (
+                        <Typography>
+                          Contrary to popular belief, Lorem Ipsum is not simply
+                          random text. It has roots in a piece of
+                        </Typography>
+                      )}
                     </Paper>
                   </Grid>
                 </Grid>
