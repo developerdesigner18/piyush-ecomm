@@ -20,6 +20,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import style from "./style.css";
+import { Link } from "react-router-dom";
 
 const HeaderBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -205,7 +206,8 @@ const HeaderBar = () => {
             }}
             className="login"
           >
-            <Typography
+            <Link
+              to="/login"
               fontSize="16px"
               noWrap
               component="a"
@@ -220,7 +222,8 @@ const HeaderBar = () => {
               }}
             >
               Login
-            </Typography>
+            </Link>
+
             <PersonIcon sx={{ display: { xs: "flex", md: "flex" } }} />
           </div>
         </Toolbar>

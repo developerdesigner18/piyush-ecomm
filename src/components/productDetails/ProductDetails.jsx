@@ -1,9 +1,11 @@
 import { Grid, Box, Paper, Typography, Button } from "@mui/material";
 import { Container } from "@mui/system";
-import CircleIcon from "@mui/icons-material/Circle";
+import { newsletter } from "../../data";
 import { bag } from "../../data";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import BasicRating from "./rating";
+import RelatedProducts from "./RelatedProducts";
 
 const ProductDetails = () => {
   const major = bag[0].major;
@@ -31,11 +33,20 @@ const ProductDetails = () => {
               </Grid>
               {major.map((img, index) => {
                 return (
-                  <Grid item sm={4} display="flex" justifyContent="left">
+                  <Grid item sm={4} display="flex">
                     <Box width="375px" height="487px">
                       <img src={img.img} />
                     </Box>
-                    <Box sx={{ width: "400px" }}>
+                    <Box
+                      sx={{
+                        width: "400px",
+
+                        flexdirection: "column",
+                        justifycontent: "center",
+                        alignitems: "flex-start",
+                        margin: "auto",
+                      }}
+                    >
                       <Typography
                         sx={{
                           fontFamily: "#151875",
@@ -46,17 +57,7 @@ const ProductDetails = () => {
                       >
                         {img.title}
                       </Typography>
-                      <div>
-                        <CircleIcon
-                          sx={{ color: "#DE9034", fontSize: "small" }}
-                        />
-                        <CircleIcon
-                          sx={{ color: "#EC42A2", fontSize: "small" }}
-                        />
-                        <CircleIcon
-                          sx={{ color: "#8568FF", fontSize: "small" }}
-                        />
-                      </div>
+                      <BasicRating />
                       <div
                         style={{
                           display: "flex",
@@ -85,7 +86,13 @@ const ProductDetails = () => {
                           {img.Price}
                         </Typography>
                       </div>
-                      <div>
+                      <div
+                        style={{
+                          display: "block",
+                          justifycontent: "center",
+                          alignitems: "flex-start",
+                        }}
+                      >
                         <Typography
                           sx={{
                             fontFamily: "Josefin Sans",
@@ -122,7 +129,7 @@ const ProductDetails = () => {
           style={{
             display: "flex",
             justifyContent: "space-evenly",
-            marginTop: "50px",
+            marginTop: "100px",
             fontSize: "24px",
             fontfamily: "Josefin Sans",
           }}
@@ -139,7 +146,7 @@ const ProductDetails = () => {
           <Typography sx={{ color: "#151875", mt: 8 }}>
             Various Templates
           </Typography>
-          <Typography sx={{ textIndent: "100px" }}>
+          <Typography sx={{ textIndent: "100px", color: "#A9ACC6" }}>
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly
@@ -154,7 +161,7 @@ const ProductDetails = () => {
           </Typography>
           <div style={{ display: "flex", marginLeft: "100px" }}>
             <ArrowForwardIcon />
-            <Typography>
+            <Typography sx={{ color: "#A9ACC6" }}>
               {" "}
               There are many variations of passages of Lorem Ipsum available,
               but the majority have suffered alteration in some form, by
@@ -163,7 +170,7 @@ const ProductDetails = () => {
           </div>
           <div style={{ display: "flex", marginLeft: "100px" }}>
             <ArrowForwardIcon />
-            <Typography>
+            <Typography sx={{ color: "#A9ACC6" }}>
               {" "}
               There are many variations of passages of Lorem Ipsum available,
               but the majority have suffered alteration in some form, by
@@ -172,7 +179,7 @@ const ProductDetails = () => {
           </div>
           <div style={{ display: "flex", marginLeft: "100px" }}>
             <ArrowForwardIcon />
-            <Typography>
+            <Typography sx={{ color: "#A9ACC6" }}>
               {" "}
               There are many variations of passages of Lorem Ipsum available,
               but the majority have suffered alteration in some form, by
@@ -181,7 +188,7 @@ const ProductDetails = () => {
           </div>
           <div style={{ display: "flex", marginLeft: "100px" }}>
             <ArrowForwardIcon />
-            <Typography>
+            <Typography sx={{ color: "#A9ACC6" }}>
               {" "}
               There are many variations of passages of Lorem Ipsum available,
               but the majority have suffered alteration in some form, by
@@ -189,6 +196,18 @@ const ProductDetails = () => {
             </Typography>
           </div>
         </div>
+      </Box>
+      <RelatedProducts />
+      <Box
+        style={{
+          margin: "30px",
+          display: "grid",
+          placeItems: "center",
+          marginTop: "150px",
+          marginBottom: "150px",
+        }}
+      >
+        <img src={newsletter.img2} height="50px" width="auto" />
       </Box>
     </div>
   );

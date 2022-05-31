@@ -1,28 +1,32 @@
 export const featureProduct = [
   {
+    id: 1,
     img: "/feature_product/cantellivar chair1.png",
-    title: "Cantellivar Chair",
+    title: "Cantelliva Chair",
     code: "Y523201",
-    Price: "$42",
+    Price: 42,
   },
   {
+    id: 2,
     img: "/feature_product/cantellivar chair2.png",
-    title: "Cantellivar Chair",
+    title: "Cantellivr Chair",
     code: "Y524201",
-    Price: "$45",
+    Price: 45,
   },
-  {
-    img: "/feature_product/cantellivar chair3.png",
-    title: "Cantellivar Chair",
-    code: "Y524201",
-    Price: "$48",
-  },
-  {
-    img: "/feature_product/cantellivar chair2.png",
-    title: "Cantellivar Chair",
-    code: "Y524201",
-    Price: "$40",
-  },
+  // {
+  //   id: 3,
+  //   img: "/feature_product/cantellivar chair3.png",
+  //   title: "Cantellvar Chair",
+  //   code: "Y524201",
+  //   Price: 48,
+  // },
+  // {
+  //   id: 4,
+  //   img: "/feature_product/cantellivar chair2.png",
+  //   title: "Cantllivar Chair",
+  //   code: "Y524201",
+  //   Price: 40,
+  // },
 ];
 
 export const latestProduct = [
@@ -290,3 +294,30 @@ export const bag = [
     ],
   },
 ];
+
+export const RelatedProduct = [
+  {
+    img: "/relatedproduct/mens fashion.png",
+    Price: "$45",
+    title: "mens fashion ",
+  },
+  {
+    img: "/relatedproduct/walex dummy.png",
+    Price: "$45",
+    title: "walex dummy ",
+  },
+  {
+    img: "/relatedproduct/women fashion.png",
+    Price: "$45",
+    title: "women fashion ",
+  },
+  {
+    img: "/relatedproduct/women.png",
+    Price: "$45",
+    title: "women ",
+  },
+];
+export const ordercomplete = {
+  img1: "/ordercompleted/checklist 1.png",
+  img2: "/ordercompleted/clock 1.png",
+};
