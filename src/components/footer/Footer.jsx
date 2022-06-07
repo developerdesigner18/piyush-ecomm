@@ -25,7 +25,7 @@ const Footer = () => {
                 style={{
                   fontFamily: "Josefin Sans",
                   height: "38px",
-                  width: "110px",                                                      
+                  width: "110px",
                 }}
               >
                 <Typography variant="h4">Hekto</Typography>
@@ -139,7 +139,7 @@ const Footer = () => {
               <Box>
                 <Link
                   style={{ textDecoration: "none", color: "#8A8FB9" }}
-                  to=""
+                  to="/blog"
                 >
                   Blog
                 </Link>

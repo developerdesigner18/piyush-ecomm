@@ -5,6 +5,7 @@ export const featureProduct = [
     title: "Cantelliva Chair",
     code: "Y523201",
     Price: 42,
+    name: "evertheless, Levantine and MSA are not mutually intelligible. Levantine speakers often call their l",
   },
   {
     id: 2,
@@ -12,21 +13,24 @@ export const featureProduct = [
     title: "Cantellivr Chair",
     code: "Y524201",
     Price: 45,
+    name: "evertheless, Levantine and MSA are not mutually intelligible.",
   },
-  // {
-  //   id: 3,
-  //   img: "/feature_product/cantellivar chair3.png",
-  //   title: "Cantellvar Chair",
-  //   code: "Y524201",
-  //   Price: 48,
-  // },
-  // {
-  //   id: 4,
-  //   img: "/feature_product/cantellivar chair2.png",
-  //   title: "Cantllivar Chair",
-  //   code: "Y524201",
-  //   Price: 40,
-  // },
+  {
+    id: 3,
+    img: "/feature_product/cantellivar chair3.png",
+    title: "Cantellvar Chair",
+    code: "Y524201",
+    Price: 48,
+    name: "evertheless, Levantine and MSA are not mutually i",
+  },
+  {
+    id: 4,
+    img: "/feature_product/cantellivar chair2.png",
+    title: "Cantllivar Chair",
+    code: "Y524201",
+    Price: 40,
+    name: "evertheless, Levantine and MSA are not mutually intelligible.",
+  },
 ];
 
 export const latestProduct = [
@@ -321,3 +325,20 @@ export const ordercomplete = {
   img1: "/ordercompleted/checklist 1.png",
   img2: "/ordercompleted/clock 1.png",
 };
+export const blogpage = [
+  {
+    img: "/blogpage/image1.png",
+    name: "surfauxion",
+    title: "Mauris at orci non vulputate diam tincidunt nec.",
+  },
+  {
+    img: "/blogpage/image2.png",
+    name: "surfauxion",
+    title: "Aenean vitae in aliquam ultrices lectus. Etiam.",
+  },
+  {
+    img: "/blogpage/image3.png",
+    name: "surfauxion",
+    title: "Sit nam congue feugiat nisl, mauris amet nisi.",
+  },
+];

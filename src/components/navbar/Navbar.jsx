@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 
 const pages = [
   { name: "Home", slug: "/" },
-  { name: "Page", slug: "/page" },
+  // { name: "Page", slug: "/page" },
   { name: "Products", slug: "/product" },
   { name: "Blog", slug: "/blog" },
   { name: "Shop", slug: "/shop" },

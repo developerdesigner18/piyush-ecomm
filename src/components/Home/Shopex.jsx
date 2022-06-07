@@ -1,7 +1,5 @@
 import { Grid, Paper, Typography, Container, Box } from "@mui/material";
-import { shopexOffer } from "../../data";
-const ShopexOffer = () => {
-  const product = shopexOffer;
+const ShopexOffer = ({ title, product }) => {
   return (
     <>
       <Typography
@@ -13,7 +11,7 @@ const ShopexOffer = () => {
           m: 5,
         }}
       >
-        What Shopex Offer!
+        {title}
       </Typography>
       <Container>
         <Grid

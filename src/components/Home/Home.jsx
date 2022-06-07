@@ -9,14 +9,17 @@ import ShopexOffer from "./Shopex";
 import Sofa from "./Sofa";
 import TopCategory from "./Topcategory";
 import Trending from "./Trending";
+import { shopexOffer } from "../../data";
+
 
 const Home = () => {
+  const product = shopexOffer;
   return (
     <>
       <SwipeableTextMobileStepper />
       <FeatureProducts />
       <LatestProduct />
-      <ShopexOffer />
+      <ShopexOffer title="What Shopex Offer!" product={product} />
       <Sofa />
       <Trending />
       <DiscountItem />
