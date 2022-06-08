@@ -1,8 +1,13 @@
 import { Button, Grid, makeStyles, TextField, Typography } from "@mui/material";
 import { Box, Container, height } from "@mui/system";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const signinHandler = () => {
+    navigate("/register");
+  };
   return (
     <footer style={{ marginbottom: 0, background: "#EEEFFB" }}>
       <Box>
@@ -33,6 +38,7 @@ const Footer = () => {
               <Box sx={{ width: "377px" }}>
                 <TextField placeholder="Enter your email address" />
                 <Button
+                  onClick={signinHandler}
                   style={{
                     background: "deeppink",
                     height: "54px",

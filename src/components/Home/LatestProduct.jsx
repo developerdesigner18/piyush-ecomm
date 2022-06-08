@@ -1,9 +1,26 @@
 import { Grid, Paper, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { latestProduct } from "../../data";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Cart } from "../../context/cartContext";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 const LatestProduct = () => {
   const product = latestProduct;
   const group = ["New Arrival", "Best Seller", "Featured", "Special Offer"];
+  let navigate = useNavigate();
+  const { cart, setCart } = useContext(Cart);
+  const productinfoHandler = (product, index) => {
+    navigate("/productdetail", { state: { index: index, product: product } });
+  };
+
+  const addtocartHandler = (product, index, e) => {
+    e.stopPropagation();
+
+    setCart([...cart, product]);
+  };
+
   return (
     <>
       <Typography
@@ -60,9 +77,17 @@ const LatestProduct = () => {
                 sx={{
                   m: "5px",
                 }}
+                onClick={() => productinfoHandler(product, index)}
               >
                 <Grid container>
                   <Grid item xs={4}>
+                    <FavoriteBorderIcon
+                      sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+                    />
+                    <ShoppingCartIcon
+                      onClick={(e) => addtocartHandler(product, index, e)}
+                      sx={{ display: { xs: "none", md: "flex" } }}
+                    />
                     <img
                       src={product.img}
                       alt="logo"
@@ -101,7 +126,7 @@ const LatestProduct = () => {
                               mr: 1,
                             }}
                           >
-                            {product.price}
+                            {product.Price}
                           </Typography>
                           <Typography
                             sx={{

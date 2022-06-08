@@ -38,37 +38,37 @@ export const latestProduct = [
     img: "/latestProdutct/comfort Handy Craft1.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    price: "$65",
+    Price: "$65",
   },
   {
     img: "/latestProdutct/comfort Handy Craft2.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    price: "$65",
+    Price: "$65",
   },
   {
     img: "/latestProdutct/comfort Handy Craft3.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    price: "$65",
+    Price: "$65",
   },
   {
     img: "/latestProdutct/comfort Handy Craft4.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    price: "$65",
+    Price: "$65",
   },
   {
     img: "/latestProdutct/comfort Handy Craft1.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    price: "$65",
+    Price: "$65",
   },
   {
     img: "/latestProdutct/comfort Handy Craft2.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    price: "$65",
+    Price: "$65",
   },
 ];
 export const trendingproduct = [

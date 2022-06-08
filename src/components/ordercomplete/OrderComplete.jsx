@@ -3,8 +3,14 @@ import { bgcolor, Box } from "@mui/system";
 import CheckIcon from "@mui/icons-material/Check";
 import { ordercomplete } from "../../data";
 import { newsletter } from "../../data";
+import { useNavigate } from "react-router-dom";
 
 const OrderComplete = () => {
+  const navigate = useNavigate();
+  const shopingHandler = () => {
+    navigate("/product");
+  };
+
   return (
     <>
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -31,6 +37,7 @@ const OrderComplete = () => {
           </Typography>
           <Button
             variant="contained"
+            onClick={shopingHandler}
             sx={{
               width: "208px",
               height: "59px",

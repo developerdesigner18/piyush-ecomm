@@ -6,11 +6,19 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import BasicRating from "./rating";
 import RelatedProducts from "./RelatedProducts";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
+  const location = useLocation();
   const major = bag[0].major;
-  console.log(bag[1].minor, "..............minor category");
-  const minor = bag[1].minor;
+  const navigate = useNavigate();
+  const minor = [location.state.product];
+
+  const addtocartHandler = (product) => {
+    navigate("/shop", { state: { product: product } });
+  };
+
   const productdetail = ["Description", "Additional Info", "Reviews", "Video"];
   return (
     <div>
@@ -31,16 +39,12 @@ const ProductDetails = () => {
                   );
                 })}
               </Grid>
-              {major.map((img, index) => {
+              {minor.map((img, index) => {
                 return (
                   <Grid item sm={4} display="flex">
-                    <Box width="375px" height="487px">
-                      <img src={img.img} />
-                    </Box>
                     <Box
                       sx={{
                         width: "400px",
-
                         flexdirection: "column",
                         justifycontent: "center",
                         alignitems: "flex-start",
@@ -59,22 +63,11 @@ const ProductDetails = () => {
                       </Typography>
                       <BasicRating />
                       <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "flex-start",
-                          margin: "10px",
-                        }}
+                      // style={{
+                      //   display: "flex",
+                      //   justifyContent: "flex-start",
+                      // }}
                       >
-                        <Typography
-                          sx={{
-                            fontFamily: "Josefin Sans",
-                            fontSize: 14,
-                            marginRight: "10px",
-                            color: "#151875",
-                          }}
-                        >
-                          {img.newprice}
-                        </Typography>
                         <Typography
                           sx={{
                             fontFamily: "Josefin Sans",
@@ -102,7 +95,10 @@ const ProductDetails = () => {
                           {img.text}
                         </Typography>
                         <div display="inline-flex">
-                          <Button sx={{ color: "#151875", fontSize: "16px" }}>
+                          <Button
+                            sx={{ color: "#151875", fontSize: "16px" }}
+                            onClick={() => addtocartHandler(img)}
+                          >
                             Add To Cart
                           </Button>
                           <FavoriteBorderIcon

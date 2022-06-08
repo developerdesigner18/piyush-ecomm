@@ -8,13 +8,26 @@ import TableRow from "@mui/material/TableRow";
 import { featureProduct } from "../../data";
 import { Typography, Box, Button } from "@mui/material";
 import { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { Cart } from "../../context/cartContext";
 const BasicTable = () => {
-  const [productinfo, setProductinfo] = useState(featureProduct);
+  const location = useLocation();
+  const { cart, setCart } = React.useContext(Cart);
+  console.log(cart);
+  const minor = cart ? cart : null;
+  const [productinfo, setProductinfo] = useState(minor);
+
   const [update, setUpdate] = useState(true);
   const [quantity, setQuantity] = useState([]);
+
   const cartTotal = {
     total: 0,
+  };
+
+  const navigate = useNavigate();
+  const checkoutHandler = () => {
+    navigate("/ordercomplete");
   };
 
   const quantitychangeHandler = (id, e) => {
@@ -27,7 +40,7 @@ const BasicTable = () => {
 
   useEffect(() => {
     let temp = [];
-    productinfo.map((t) => {
+    productinfo?.map((t) => {
       temp.push({ id: t.id, quantity: 1 });
     });
     setQuantity(temp);
@@ -39,15 +52,6 @@ const BasicTable = () => {
   const updatecart = () => {
     setUpdate(false);
   };
-  // useEffect(() => {
-  //   productinfo.map((p) => {
-  //     let res =
-  //       parseInt(p.Price) * quantity?.find((x) => x?.id === p?.id)?.quantity;
-  //     console.log(res, "<<<<<<<<<<<<<<<<<<<<<<<<<");
-
-  //     setTotal((prev) => prev + res);
-  //   });
-  // }, []);
 
   return (
     <TableContainer
@@ -166,18 +170,6 @@ const BasicTable = () => {
                             </Box>
                           </div>
                         </div>
-                        {/* <Grid
-                      item
-                      md={3}
-                      xs={6}
-                      sm={4}
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    ></Grid> */}
                       </div>
                     }
                   </TableCell>
@@ -204,18 +196,15 @@ const BasicTable = () => {
                         quantity?.find((x) => x?.id === product?.id)?.quantity}
                     </Typography>
                   </TableCell>
-
-                  {/* <TableCell align="right">{product}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell> */}
                 </TableRow>
               );
             })}
-          {!productinfo.length && (
+          {productinfo && !productinfo.length && (
             <>
               <Typography>Your cart is empty</Typography>
             </>
           )}
-          {productinfo.length >= 1 && (
+          {productinfo && productinfo.length >= 1 && (
             <>
               <TableRow
                 sx={{
@@ -328,6 +317,7 @@ const BasicTable = () => {
         <TableRow sx={{}}>
           <Button
             variant="contained"
+            onClick={checkoutHandler}
             sx={{
               bgcolor: "#19D16F",
               width: "312px",

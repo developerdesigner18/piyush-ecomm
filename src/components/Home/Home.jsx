@@ -10,14 +10,18 @@ import Sofa from "./Sofa";
 import TopCategory from "./Topcategory";
 import Trending from "./Trending";
 import { shopexOffer } from "../../data";
-
+import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 const Home = () => {
   const product = shopexOffer;
+
   return (
     <>
       <SwipeableTextMobileStepper />
+
       <FeatureProducts />
+
       <LatestProduct />
       <ShopexOffer title="What Shopex Offer!" product={product} />
       <Sofa />

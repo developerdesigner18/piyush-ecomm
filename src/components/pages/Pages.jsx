@@ -9,6 +9,7 @@ import ListIcon from "@mui/icons-material/List";
 import { accessories } from "../../data";
 import CircleIcon from "@mui/icons-material/Circle";
 import { bag } from "../../data";
+import { useNavigate } from "react-router-dom";
 
 import { newsletter } from "../../data";
 import Sidebar from "./Sidebar";
@@ -23,6 +24,10 @@ const Page = () => {
   };
   const listDisplay = () => {
     setDisplaylist(true);
+  };
+  let navigate = useNavigate();
+  const productinfoHandler = (product, index) => {
+    navigate("/productdetail", { state: { index: index, product: product } });
   };
 
   const handleChange = (event) => {
@@ -127,6 +132,7 @@ const Page = () => {
               {accessories.map((product, index) => {
                 return (
                   <Box
+                    onClick={(e) => productinfoHandler(product, index,e)}
                     key={index}
                     sx={{
                       width: `${displaylist ? "500px" : "270px"}`,
