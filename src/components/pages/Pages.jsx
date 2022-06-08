@@ -10,10 +10,16 @@ import { accessories } from "../../data";
 import CircleIcon from "@mui/icons-material/Circle";
 import { bag } from "../../data";
 import { useNavigate } from "react-router-dom";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useContext } from "react";
+import { Cart } from "../../context/cartContext";
 
 import { newsletter } from "../../data";
 import Sidebar from "./Sidebar";
 const Page = () => {
+  const { cart, setCart } = useContext(Cart);
+
   const [sort, setSort] = React.useState("Best Match");
   const [displaylist, setDisplaylist] = React.useState(false);
   const major = bag[0].major;
@@ -32,6 +38,12 @@ const Page = () => {
 
   const handleChange = (event) => {
     setSort(event.target.value);
+  };
+
+  const addtocartHandler = (product, index, e) => {
+    e.stopPropagation();
+
+    setCart([...cart, product]);
   };
   return (
     <>
@@ -132,7 +144,7 @@ const Page = () => {
               {accessories.map((product, index) => {
                 return (
                   <Box
-                    onClick={(e) => productinfoHandler(product, index,e)}
+                    onClick={(e) => productinfoHandler(product, index, e)}
                     key={index}
                     sx={{
                       width: `${displaylist ? "500px" : "270px"}`,
@@ -156,6 +168,13 @@ const Page = () => {
                           alignItems="center"
                           margin="auto"
                         >
+                          <FavoriteBorderIcon
+                            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+                          />
+                          <ShoppingCartIcon
+                            onClick={(e) => addtocartHandler(product, index, e)}
+                            sx={{ display: { xs: "none", md: "flex" } }}
+                          />
                           <img
                             src={product.img}
                             alt="logo"

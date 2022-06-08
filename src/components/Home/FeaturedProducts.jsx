@@ -12,14 +12,13 @@ const FeatureProduct = () => {
   const { cart, setCart } = useContext(Cart);
 
   let navigate = useNavigate();
-  
+
   const productinfoHandler = (product, index) => {
     navigate("/productdetail", { state: { index: index, product: product } });
   };
 
   const addtocartHandler = (product, index, e) => {
     e.stopPropagation();
-   
     setCart([...cart, product]);
   };
 
