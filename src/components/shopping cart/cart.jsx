@@ -5,18 +5,17 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { featureProduct } from "../../data";
 import { Typography, Box, Button } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import { Cart } from "../../context/cartContext";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 const BasicTable = () => {
-  const location = useLocation();
   const { cart, setCart } = React.useContext(Cart);
   console.log(cart);
-  const minor = cart ? cart : null;
-  const [productinfo, setProductinfo] = useState(minor);
+  const productcart = cart ? cart : null;
+  console.log(productcart);
+  const [productinfo, setProductinfo] = useState(productcart);
 
   const [update, setUpdate] = useState(true);
   const [quantity, setQuantity] = useState([]);
@@ -53,6 +52,11 @@ const BasicTable = () => {
     setUpdate(false);
   };
 
+  const productDeleteHandler = (index) => {
+    const product = [...productinfo];
+    product.splice(index, 1);
+    setProductinfo(product);
+  };
   return (
     <TableContainer
       style={{
@@ -117,6 +121,9 @@ const BasicTable = () => {
                   <TableCell component="th" scope="row">
                     {
                       <div>
+                        <HighlightOffIcon
+                          onClick={() => productDeleteHandler(index)}
+                        />
                         <div
                           className="imageWithNameContainer"
                           style={{

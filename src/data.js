@@ -35,86 +35,100 @@ export const featureProduct = [
 
 export const latestProduct = [
   {
+    id: 5,
     img: "/latestProdutct/comfort Handy Craft1.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    Price: "$65",
+    Price: 65,
   },
   {
+    id: 78,
     img: "/latestProdutct/comfort Handy Craft2.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    Price: "$65",
+    Price: 65,
   },
   {
+    id: 79,
     img: "/latestProdutct/comfort Handy Craft3.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    Price: "$65",
+    Price: 65,
   },
   {
+    id: 25,
     img: "/latestProdutct/comfort Handy Craft4.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    Price: "$65",
+    Price: 65,
   },
   {
+    id: 12,
     img: "/latestProdutct/comfort Handy Craft1.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    Price: "$65",
+    Price: 65,
   },
   {
+    id: 36,
     img: "/latestProdutct/comfort Handy Craft2.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    Price: "$65",
+    Price: 65,
   },
 ];
 export const trendingproduct = [
   {
+    id: 98,
     img: "/latestProdutct/comfort Handy Craft1.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    price: "$65",
+    price: 65,
   },
   {
+    id: 101,
     img: "/latestProdut/ctcomfort Handy Craft4.png",
     title: "Comfort Handy Craft",
     newprice: "$42",
-    price: "$65",
+    price: 65,
   },
   {
+    id: 103,
     img: "/feature_product/cantellivar chair1.png",
     title: "Cantellivar Chair",
-    Price: "$42",
+    Price: 42,
     newprice: "$25",
   },
   {
+    id: 104,
     img: "/feature product/cantellivar chair2.png",
     title: "Cantellivar Chair",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
   },
 ];
 
 export const shopexOffer = [
   {
+    id: 105,
     img: "/offer/cashback 1.png",
     title: "24/7 Support",
     text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin years old",
   },
   {
+    id: 127,
     img: "/offer/free-delivery 1.png",
     title: "24/7 Support",
     text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin years old",
   },
   {
+    id: 452,
     img: "/offer/premium-quality 1.png",
     title: "24/7 Support",
     text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin years old",
   },
   {
+    id: 123,
     img: "/offer/24-hours-support 1.png",
     title: "24/7 Support",
     text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin years old",
@@ -127,28 +141,30 @@ export const sofa = {
 
 export const trending = [
   {
+    id: 52,
     img: "/trending/image1.png",
     title: "Cantellivar Chair",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
   },
   {
+    id: 563,
     img: "/trending/image2.png",
     title: "Cantellivar Chair",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
   },
   {
     img: "/trending/image3.png",
     title: "Cantellivar Chair",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
   },
   {
     img: "/trending/image4.png",
     title: "Cantellivar Chair",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
   },
 ];
 export const discountsofa = {
@@ -156,24 +172,28 @@ export const discountsofa = {
 };
 export const topCategory = [
   {
+    id: 8958,
     img: "/top category/image1.png",
     title: "Mini LCW Chair",
-    Price: "$45",
+    Price: 45,
   },
   {
+    id: 856,
     img: "/top category/image2.png",
     title: "Mini LCW Chair",
-    Price: "$45",
+    Price: 45,
   },
   {
+    id: 886,
     img: "/top category/image3.png",
     title: "Mini LCW Chair",
-    Price: "$45",
+    Price: 45,
   },
   {
+    id: 8865,
     img: "/top category/image4.png",
     title: "Mini LCW Chair",
-    Price: "$45",
+    Price: 45,
   },
 ];
 export const newsletter = {
@@ -206,75 +226,87 @@ export const blog = [
 ];
 export const accessories = [
   {
+    id: 1256,
     img: "/accessories/image 9.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "vel elit esumond",
   },
   {
+    id: 1264,
     img: "/accessories/image10.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "vel elit esumond",
   },
   {
+    id: 4256,
     img: "/accessories/image11.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "vel elit esumond",
   },
   {
+    id: 852,
     img: "/accessories/image12.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "vel elit esumond",
   },
   {
+    id: 233,
     img: "/accessories/image1.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "vel elit esumond",
   },
   {
+    id: 1526,
     img: "/accessories/image2.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "vel elit esumond",
   },
   {
+    id: 782,
     img: "/accessories/image3.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "vel elit esumond",
   },
   {
+    id: 4526,
     img: "/accessories/image4.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "vel elit esumond",
   },
   {
+    id: 152,
     img: "/accessories/image5.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "vel elit esumond",
   },
   {
+    id: 223,
     img: "/accessories/image6.png",
     newprice: "$25",
-    Price: "$45",
+    Price: 45,
     title: "sollictidum elit esumond",
   },
   {
+    id: 234,
     img: "/accessories/image7.png",
     newprice: "$25",
-    Price: "$45",
+    Price: "45",
     title: "vel elit esumond",
   },
   {
+    id: 234,
     img: "/accessories/image8.png",
     newprice: "$25",
-    Price: "$45",
+    Price: "45",
     title: "ultrices condetioum ",
   },
 ];
@@ -284,7 +316,7 @@ export const bag = [
       {
         img: "/bag/bag4.png",
         newprice: "$25",
-        Price: "$45",
+        Price: "45",
         title: "bag ",
         text: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of",
       },
@@ -302,22 +334,22 @@ export const bag = [
 export const RelatedProduct = [
   {
     img: "/relatedproduct/mens fashion.png",
-    Price: "$45",
+    Price: "45",
     title: "mens fashion ",
   },
   {
     img: "/relatedproduct/walex dummy.png",
-    Price: "$45",
+    Price: "45",
     title: "walex dummy ",
   },
   {
     img: "/relatedproduct/women fashion.png",
-    Price: "$45",
+    Price: "45",
     title: "women fashion ",
   },
   {
     img: "/relatedproduct/women.png",
-    Price: "$45",
+    Price: "45",
     title: "women ",
   },
 ];

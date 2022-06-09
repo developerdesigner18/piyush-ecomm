@@ -9,15 +9,17 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 const LatestProduct = () => {
   const product = latestProduct;
   const group = ["New Arrival", "Best Seller", "Featured", "Special Offer"];
+
   let navigate = useNavigate();
   const { cart, setCart } = useContext(Cart);
+
   const productinfoHandler = (product, index) => {
     navigate("/productdetail", { state: { index: index, product: product } });
   };
 
   const addtocartHandler = (product, index, e) => {
     e.stopPropagation();
-
+    console.log(product);
     setCart([...cart, product]);
   };
 
