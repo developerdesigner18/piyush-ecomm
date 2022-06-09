@@ -18,17 +18,17 @@ const Home = () => {
 
   return (
     <>
-      <SwipeableTextMobileStepper />
+      {/* <SwipeableTextMobileStepper /> */}
 
       <FeatureProducts />
 
       <LatestProduct />
       <ShopexOffer title="What Shopex Offer!" product={product} />
-      <Sofa />
+      {/* <Sofa /> */}
       <Trending />
-      <DiscountItem />
+      {/* <DiscountItem /> */}
       <TopCategory />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Blog />
     </>
   );

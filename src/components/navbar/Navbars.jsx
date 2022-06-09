@@ -2,22 +2,19 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import ButtonAppBar from "./headers";
+import { Link } from "react-router-dom";
+import Menu from "@mui/material/Menu";
+import InputBase from "@mui/material/InputBase";
 import MenuItem from "@mui/material/MenuItem";
+import { styled, alpha } from "@mui/material/styles";
 import AdbIcon from "@mui/icons-material/Adb";
 import SearchIcon from "@mui/icons-material/Search";
-import { styled, alpha } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
-import HeaderBar from "./Header";
-import { Link } from "react-router-dom";
-import ButtonAppBar from "./headers";
+import Container from "@mui/material/Container";
 
 const pages = [
   { name: "Home", slug: "/" },
@@ -27,8 +24,7 @@ const pages = [
   { name: "Shop", slug: "/shop" },
   { name: "Contact", slug: "/contact" },
 ];
-
-const NavBar = () => {
+export default function NavBars() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -47,10 +43,10 @@ const NavBar = () => {
     setAnchorElUser(null);
   };
   const Search = styled("div")(({ theme }) => ({
-    position: "relative",
+    position: "static",
     borderRadius: theme.shape.borderRadius,
 
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.black, 0.15),
     "&:hover": {
       backgroundColor: alpha(theme.palette.common.black, 0.25),
     },
@@ -88,83 +84,88 @@ const NavBar = () => {
       },
     },
   }));
-
   return (
     <>
-      {/* <HeaderBar /> */}
       <ButtonAppBar />
-      <AppBar position="relative" sx={{ bgcolor: "#FFFFFF" }}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
+      <Box sx={{ flexGrow: 3 }}>
+        <AppBar
+          position="static"
+          sx={{
+            bgcolor: "#FFFFFF",
+            alignItems: { md: "center", sm: "center", xl: "center" },
+          }}
+        >
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              onClick={handleOpenNavMenu}
+              aria-label="menu"
+              sx={{
+                mr: 2,
+                bgcolor: "#673ab7",
+                display: { xs: "flex", md: "none", sm: "none", xl: "none" },
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Link
+                    to={`${page.slug}`}
+                    style={{ textDecoration: "none", textAlign: "center" }}
+                  >
+                    {page.name}
+                  </Link>
+                </MenuItem>
+              ))}
+            </Menu>
+            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
             <Typography
               variant="h6"
-              noWrap
-              component="a"
               href="/"
               sx={{
-                mr: 20,
-                ml: 20,
-                display: { xs: "none", md: "flex" },
+                display: { xs: "none", sm: "flex", md: "flex" },
                 fontFamily: "Josefin Sans",
                 fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "0D0E43",
+                fontSize: "34px",
+                letterSpacing: ".2rem",
+                color: "#0D0E43",
                 textDecoration: "none",
               }}
             >
-              HEKTO
+              Hekto
             </Typography>
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                // color="inherit"
-                sx={{ bgcolor: "#673ab7" }}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Link
-                      to={`${page.slug}`}
-                      style={{ textDecoration: "none", textAlign: "center" }}
-                    >
-                      {page.name}
-                    </Link>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex", sm: "flex" },
+              }}
+            >
               {pages.map((page, index) => (
                 <Button
                   key={index}
                   // onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "black", display: "block" }}
+                  sx={{ mr: 1, color: "black", display: "block" }}
                 >
                   <Link to={`${page.slug}`} style={{ textDecoration: "none" }}>
                     {page.name}
@@ -172,10 +173,9 @@ const NavBar = () => {
                 </Button>
               ))}
             </Box>
-
             <Search
               sx={{
-                display: { xs: "flex", md: "flex" },
+                display: { xs: "flex", md: "flex", sm: "none" },
                 flexDirection: "row",
               }}
             >
@@ -199,9 +199,8 @@ const NavBar = () => {
               </Container>
             </Search>
           </Toolbar>
-        </Container>
-      </AppBar>
+        </AppBar>
+      </Box>
     </>
   );
-};
-export default NavBar;
+}
