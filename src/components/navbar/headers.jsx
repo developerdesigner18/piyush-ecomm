@@ -38,14 +38,14 @@ export default function ButtonAppBar() {
         sx={{
           bgcolor: "#673ab7",
 
-          alignItems: { md: "center", sm: "center" },
+          alignItems: { md: "center", sm: "center", xs: "flex-start" },
         }}
       >
-        <Toolbar>
+        <Toolbar style={{ padding: 0 }}>
           <Container
             sx={{
               display: { xs: "flex" },
-              justifyContent: { xs: "space-between" },
+              justifyContent: {},
               alignItems: { xs: "center" },
             }}
           >
@@ -53,7 +53,7 @@ export default function ButtonAppBar() {
               <EmailIcon
                 sx={{
                   display: {
-                    xs: "flex",
+                    xs: "none",
                     md: "flex",
                     xl: "flex",
                     flexDirection: "row",

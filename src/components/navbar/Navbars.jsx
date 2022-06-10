@@ -15,6 +15,8 @@ import { styled, alpha } from "@mui/material/styles";
 import AdbIcon from "@mui/icons-material/Adb";
 import SearchIcon from "@mui/icons-material/Search";
 import Container from "@mui/material/Container";
+import "../../App.css";
+import { useState } from "react";
 
 const pages = [
   { name: "Home", slug: "/" },
@@ -24,6 +26,7 @@ const pages = [
   { name: "Shop", slug: "/shop" },
   { name: "Contact", slug: "/contact" },
 ];
+
 export default function NavBars() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -39,35 +42,51 @@ export default function NavBars() {
     setAnchorElNav(null);
   };
 
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
   const Search = styled("div")(({ theme }) => ({
-    position: "static",
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    border: "2px solid #E7E6EF",
     borderRadius: theme.shape.borderRadius,
-
-    backgroundColor: alpha(theme.palette.common.black, 0.15),
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
     "&:hover": {
-      backgroundColor: alpha(theme.palette.common.black, 0.25),
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
+    marginRight: theme.spacing(2),
     marginLeft: 0,
-    marginRight: 50,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
+    width: "auto",
+    [theme.breakpoints.up("md")]: {
+      marginLeft: theme.spacing(3),
       width: "auto",
     },
   }));
 
   const SearchIconWrapper = styled("div")(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
+    background: "deeppink",
+    height: "42px",
+    width: "50px",
+    position: "relative",
     pointerEvents: "none",
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   }));
+
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: "black",
     "& .MuiInputBase-input": {
@@ -76,23 +95,33 @@ export default function NavBars() {
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
       width: "100%",
-      [theme.breakpoints.up("sm")]: {
-        width: "12ch",
-        "&:focus": {
-          width: "15ch",
-        },
+      [theme.breakpoints.up("md")]: {
+        width: "auto",
       },
     },
   }));
   return (
     <>
       <ButtonAppBar />
-      <Box sx={{ flexGrow: 3 }}>
+      <Box sx={{ flexGrow: 1 }}>
         <AppBar
           position="static"
           sx={{
+            display: "flex",
+            flexDirection: "column",
             bgcolor: "#FFFFFF",
-            alignItems: { md: "center", sm: "center", xl: "center" },
+            // justifyContent: {
+            //   md: "space-evenly",
+            //   sm: "space-evenly",
+            //   xl: "space-evenly",
+            //   xs: "space-between",
+            // },
+            alignItems: {
+              md: "center",
+              sm: "center",
+              xl: "center",
+              xs: "flex-end",
+            },
           }}
         >
           <Toolbar>
@@ -100,16 +129,24 @@ export default function NavBars() {
               size="large"
               edge="start"
               color="inherit"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
               onClick={handleOpenNavMenu}
               aria-label="menu"
+              style={{
+                backgroundColor: isHovering ? "#673ab7" : "",
+                color: isHovering ? "white" : "",
+              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               sx={{
-                mr: 2,
                 bgcolor: "#673ab7",
                 display: { xs: "flex", md: "none", sm: "none", xl: "none" },
               }}
             >
-              <MenuIcon />
+              <MenuIcon style={{ background: "#673ab7" }} />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -117,6 +154,7 @@ export default function NavBars() {
                 vertical: "bottom",
                 horizontal: "left",
               }}
+              style={{ padding: 0 }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
@@ -125,7 +163,7 @@ export default function NavBars() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: { xs: "flex", md: "none", sm: "none" },
               }}
             >
               {pages.map((page) => (
@@ -173,10 +211,19 @@ export default function NavBars() {
                 </Button>
               ))}
             </Box>
-            <Search
+            <Search>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+              <SearchIconWrapper>
+                <SearchIcon sx={{ fontSize: "30px" }} />
+              </SearchIconWrapper>
+            </Search>
+            {/* <Search
               sx={{
-                display: { xs: "flex", md: "flex", sm: "none" },
-                flexDirection: "row",
+                display: { xs: "none", md: "flex", sm: "flex" },
+                flexDirection: "colum",
               }}
             >
               <StyledInputBase
@@ -197,7 +244,7 @@ export default function NavBars() {
               >
                 <SearchIcon />
               </Container>
-            </Search>
+            </Search> */}
           </Toolbar>
         </AppBar>
       </Box>

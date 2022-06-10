@@ -1,4 +1,10 @@
-import { Grid, Paper, Typography } from "@mui/material";
+import {
+  Grid,
+  ImageList,
+  ImageListItem,
+  Paper,
+  Typography,
+} from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { featureProduct } from "../../data";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +12,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useContext } from "react";
 import { Cart } from "../../context/cartContext";
+import ZoomInIcon from "@mui/icons-material/ZoomIn";
 const FeatureProduct = () => {
   const productinfo = featureProduct;
 
@@ -26,20 +33,33 @@ const FeatureProduct = () => {
     <>
       <Typography
         variant="h3"
-        sx={{ color: "#1A0B5B", fontFamily: "Josefin Sans", fontSize: "42px" }}
+        sx={{
+          color: "#1A0B5B",
+          fontFamily: "Josefin Sans",
+          fontSize: { xs: "30px", sm: "42px", md: "42px", xl: "42px" },
+        }}
       >
         Featured Products
       </Typography>
-      <Container>
+      <div
+        style={{
+          width: "96%",
+          margin: "3%",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      >
         <Grid
           container
           xs={12}
           item
           spacing={1}
           sx={{
-            display: { md: "flex" },
+            display: { md: "flex", sm: "flex", lg: "flex" },
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "center",
+            alignItems: "center",
             textDecoration: "none",
           }}
         >
@@ -47,25 +67,38 @@ const FeatureProduct = () => {
             return (
               <Box
                 key={index}
-                width="270px"
+                sx={{
+                  background: "#F2F0FF",
+                  m: 1,
+                  width: {
+                    xs: "100%",
+                    sm: "auto",
+                    lg: "auto",
+                    lg: "auto",
+                    xl: "auto",
+                  },
+                }}
                 onClick={() => productinfoHandler(product, index)}
               >
                 <Grid container>
-                  <Grid item md={3} xs={6} sm={4}>
-                    <FavoriteBorderIcon
-                      sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-                    />
-                    <ShoppingCartIcon
-                      onClick={(e) => addtocartHandler(product, index, e)}
-                      sx={{ display: { xs: "none", md: "flex" } }}
-                    />
+                  <Grid item md={3} xs={12} sm={3} lg={3} xl={3}>
+                    <div style={{ display: "flex" }}>
+                      <FavoriteBorderIcon sx={{ mr: 1 }} />
+                      <ShoppingCartIcon
+                        onClick={(e) => addtocartHandler(product, index, e)}
+                        sx={{ mr: 1 }}
+                      />
+                      <ZoomInIcon />
+                    </div>
+
                     <img
                       src={product.img}
                       alt="logo"
-                      height="178px"
-                      width="178px"
+                      height="200px"
+                      width="200px"
                     />
-                    <Paper sx={{ width: "200px" }}>
+
+                    <Paper sx={{ width: { xs: "100%", sm: "200px" } }}>
                       <Typography
                         sx={{
                           fontFamily: "Lato",
@@ -101,7 +134,7 @@ const FeatureProduct = () => {
             );
           })}
         </Grid>
-      </Container>
+      </div>
     </>
   );
 };

@@ -6,6 +6,8 @@ import { useContext } from "react";
 import { Cart } from "../../context/cartContext";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ZoomInIcon from "@mui/icons-material/ZoomIn";
+
 const LatestProduct = () => {
   const product = latestProduct;
   const group = ["New Arrival", "Best Seller", "Featured", "Special Offer"];
@@ -42,6 +44,8 @@ const LatestProduct = () => {
           flexDirection: "row",
           justifyContent: "center",
           alignItems: "center",
+          width: "96%",
+          margin: "3%",
         }}
       >
         {group.map((group, index) => (
@@ -52,23 +56,30 @@ const LatestProduct = () => {
               fontWeight: 400,
               fontSize: 18,
               color: "#151875",
-              margin: "20px",
+              margin: "10px",
             }}
           >
             {group}
           </div>
         ))}
       </div>
-      <Container>
+      <div
+        style={{
+          width: "96%",
+          margin: "3%",
+
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Grid
           container
           xs={12}
           item
           spacing={1}
           sx={{
-            display: { md: "flex" },
-            flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "center",
+            alignItems: "center",
             textDecoration: "none",
           }}
         >
@@ -77,28 +88,40 @@ const LatestProduct = () => {
               <Box
                 key={index}
                 sx={{
-                  m: "5px",
+                  background: "#F2F0FF",
+                  m: 1,
+                  display: "flex",
+                  flexDirection: "row",
+                  // width: {
+                  //   xs: "100%",
+                  //   sm: "auto",
+                  //   lg: "auto",
+                  //   lg: "auto",
+                  //   xl: "auto",
+                  // },
                 }}
                 onClick={() => productinfoHandler(product, index)}
               >
                 <Grid container>
-                  <Grid item xs={4}>
-                    <FavoriteBorderIcon
-                      sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-                    />
-                    <ShoppingCartIcon
-                      onClick={(e) => addtocartHandler(product, index, e)}
-                      sx={{ display: { xs: "none", md: "flex" } }}
-                    />
+                  <Grid item tem md={4} xs={12} sm={4} lg={4} xl={4}>
+                    <div style={{ display: "flex" }}>
+                      <FavoriteBorderIcon sx={{ mr: 1 }} />
+                      <ShoppingCartIcon
+                        onClick={(e) => addtocartHandler(product, index, e)}
+                        sx={{ mr: 1 }}
+                      />
+                      <ZoomInIcon />
+                    </div>
+
                     <img
                       src={product.img}
                       alt="logo"
-                      height="223px"
-                      width="229px"
+                      height="200px"
+                      width="200px"
                       justifyContent="center"
                       alignItems="center"
                     />
-                    <Paper sx={{ width: "360px" }}>
+                    <Paper sx={{ width: { xs: "100%", sm: "200px" } }}>
                       <div
                         style={{
                           display: "flex",
@@ -149,7 +172,7 @@ const LatestProduct = () => {
             );
           })}
         </Grid>
-      </Container>
+      </div>
     </>
   );
 };

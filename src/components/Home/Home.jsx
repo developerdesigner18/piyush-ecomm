@@ -12,6 +12,7 @@ import Trending from "./Trending";
 import { shopexOffer } from "../../data";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import Carousels from "./carousels";
 
 const Home = () => {
   const product = shopexOffer;
@@ -19,7 +20,7 @@ const Home = () => {
   return (
     <>
       {/* <SwipeableTextMobileStepper /> */}
-
+      {/* <Carousels /> */}
       <FeatureProducts />
 
       <LatestProduct />

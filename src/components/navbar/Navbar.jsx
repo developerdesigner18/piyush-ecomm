@@ -19,6 +19,7 @@ import HeaderBar from "./Header";
 import { Link } from "react-router-dom";
 import ButtonAppBar from "./headers";
 
+
 const pages = [
   { name: "Home", slug: "/" },
   // { name: "Page", slug: "/page" },
@@ -94,6 +95,7 @@ const NavBar = () => {
       {/* <HeaderBar /> */}
       <ButtonAppBar />
       <AppBar position="relative" sx={{ bgcolor: "#FFFFFF" }}>
+        <ButtonAppBar />
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -116,7 +118,7 @@ const NavBar = () => {
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
+              {/* <IconButton
                 size="large"
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
@@ -126,7 +128,7 @@ const NavBar = () => {
                 sx={{ bgcolor: "#673ab7" }}
               >
                 <MenuIcon />
-              </IconButton>
+              </IconButton> */}
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
@@ -139,6 +141,7 @@ const NavBar = () => {
                   vertical: "top",
                   horizontal: "left",
                 }}
+                onClick={handleOpenNavMenu}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
