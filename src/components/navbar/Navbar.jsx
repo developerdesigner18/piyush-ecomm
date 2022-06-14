@@ -19,7 +19,6 @@ import HeaderBar from "./Header";
 import { Link } from "react-router-dom";
 import ButtonAppBar from "./headers";
 
-
 const pages = [
   { name: "Home", slug: "/" },
   // { name: "Page", slug: "/page" },
@@ -56,7 +55,7 @@ const NavBar = () => {
       backgroundColor: alpha(theme.palette.common.black, 0.25),
     },
     marginLeft: 0,
-    marginRight: 50,
+
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),

@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer style={{ marginbottom: 0, background: "#EEEFFB" }}>
       <Box>
-        <Container maxwidth="xl">
+        <Container maxwidth="">
           <Grid
             item
             xs={12}
@@ -30,19 +30,22 @@ const Footer = () => {
                 style={{
                   fontFamily: "Josefin Sans",
                   height: "38px",
-                  width: "110px",
+                  width: { xs: "auto", sm: "auto", md: "auto" },
                 }}
               >
                 <Typography variant="h4">Hekto</Typography>
               </Box>
-              <Box sx={{ width: "377px" }}>
-                <TextField placeholder="Enter your email address" />
+              <Box sx={{ xs: "auto", sm: "auto", md: "auto" }}>
+                <TextField
+                  sx={{ width: { xs: "auto", sm: "auto", md: "auto" } }}
+                  placeholder="Enter your email address"
+                />
                 <Button
                   onClick={signinHandler}
-                  style={{
+                  sx={{
                     background: "deeppink",
                     height: "54px",
-                    width: "135px",
+                    width: { xs: "auto", sm: "auto", md: "auto" },
                     color: "white",
                   }}
                 >

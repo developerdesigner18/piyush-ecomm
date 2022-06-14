@@ -44,7 +44,7 @@ const FeatureProduct = () => {
       <div
         style={{
           width: "96%",
-          margin: "3%",
+          margin: "2%",
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
@@ -81,7 +81,7 @@ const FeatureProduct = () => {
                 onClick={() => productinfoHandler(product, index)}
               >
                 <Grid container>
-                  <Grid item md={3} xs={12} sm={3} lg={3} xl={3}>
+                  <Grid item md={2} xs={12} sm={2} lg={3} xl={3}>
                     <div style={{ display: "flex" }}>
                       <FavoriteBorderIcon sx={{ mr: 1 }} />
                       <ShoppingCartIcon

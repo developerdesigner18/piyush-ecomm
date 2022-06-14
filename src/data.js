@@ -230,6 +230,7 @@ export const accessories = [
     img: "/accessories/image 9.png",
     newprice: "$25",
     Price: 45,
+    category: "sofa",
     title: "vel elit esumond",
   },
   {
@@ -237,12 +238,14 @@ export const accessories = [
     img: "/accessories/image10.png",
     newprice: "$25",
     Price: 45,
+    category: "camera",
     title: "vel elit esumond",
   },
   {
     id: 4256,
     img: "/accessories/image11.png",
     newprice: "$25",
+    category: "earphone",
     Price: 45,
     title: "vel elit esumond",
   },
@@ -251,6 +254,7 @@ export const accessories = [
     img: "/accessories/image12.png",
     newprice: "$25",
     Price: 45,
+    category: "bag",
     title: "vel elit esumond",
   },
   {
@@ -258,6 +262,7 @@ export const accessories = [
     img: "/accessories/image1.png",
     newprice: "$25",
     Price: 45,
+    category: "watch",
     title: "vel elit esumond",
   },
   {
@@ -265,12 +270,15 @@ export const accessories = [
     img: "/accessories/image2.png",
     newprice: "$25",
     Price: 45,
+    category: "sofa",
     title: "vel elit esumond",
   },
   {
     id: 782,
     img: "/accessories/image3.png",
     newprice: "$25",
+    category: "earphone",
+
     Price: 45,
     title: "vel elit esumond",
   },
@@ -279,6 +287,7 @@ export const accessories = [
     img: "/accessories/image4.png",
     newprice: "$25",
     Price: 45,
+    category: "watch",
     title: "vel elit esumond",
   },
   {
@@ -286,6 +295,7 @@ export const accessories = [
     img: "/accessories/image5.png",
     newprice: "$25",
     Price: 45,
+    category: "watch",
     title: "vel elit esumond",
   },
   {
@@ -293,6 +303,7 @@ export const accessories = [
     img: "/accessories/image6.png",
     newprice: "$25",
     Price: 45,
+    category: "bag",
     title: "sollictidum elit esumond",
   },
   {
@@ -300,6 +311,7 @@ export const accessories = [
     img: "/accessories/image7.png",
     newprice: "$25",
     Price: "45",
+    category: "sofa",
     title: "vel elit esumond",
   },
   {
@@ -307,6 +319,7 @@ export const accessories = [
     img: "/accessories/image8.png",
     newprice: "$25",
     Price: "45",
+    category: "sofa",
     title: "ultrices condetioum ",
   },
 ];

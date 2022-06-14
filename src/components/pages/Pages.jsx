@@ -1,4 +1,4 @@
-import { Typography, Grid, Paper, Container } from "@mui/material";
+import { Typography, Grid, Paper, Container, TextField } from "@mui/material";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
@@ -18,19 +18,21 @@ import { Cart } from "../../context/cartContext";
 import { newsletter } from "../../data";
 import Sidebar from "./Sidebar";
 const Page = () => {
+  //const product = accessories;
   const { cart, setCart } = useContext(Cart);
+  const [product, setProduct] = React.useState(accessories);
 
-  const [sort, setSort] = React.useState("Best Match");
+  const [sort, setSort] = React.useState();
   const [displaylist, setDisplaylist] = React.useState(false);
-  const major = bag[0].major;
-  console.log(bag[0].major, "..............major category");
-  // const minor = bag.img.minor;
+
   const gridDisplay = () => {
     setDisplaylist(false);
   };
+
   const listDisplay = () => {
     setDisplaylist(true);
   };
+
   let navigate = useNavigate();
   const productinfoHandler = (product, index) => {
     navigate("/productdetail", { state: { index: index, product: product } });
@@ -38,6 +40,13 @@ const Page = () => {
 
   const handleChange = (event) => {
     setSort(event.target.value);
+
+    const filterproduct = accessories.filter(
+      (product) => product.category === event.target.value
+    );
+    setProduct(filterproduct);
+    console.log(filterproduct);
+    console.log(event.target.value);
   };
 
   const addtocartHandler = (product, index, e) => {
@@ -45,13 +54,16 @@ const Page = () => {
 
     setCart([...cart, product]);
   };
+
   return (
     <>
       <div
         style={{
           display: "flex",
-          margin: "20px",
-          justifyContent: "space-evenly",
+          marginTop: "20px",
+          justifyContent: "center",
+          width: "96%",
+          alignItems: "center",
         }}
       >
         <div>
@@ -66,8 +78,14 @@ const Page = () => {
             Ecommerce Accessories & Fashion Item
           </Typography>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-          <div style={{ display: "flex" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {/* <div style={{ display: "flex" }}>
             <Typography>Per Page:</Typography>
             <input
               style={{
@@ -77,8 +95,15 @@ const Page = () => {
               }}
               type="number"
             />
-          </div>
-          <div style={{ display: "flex", marginLeft: "10px" }}>
+          </div> */}
+          <div
+            style={{
+              display: "flex",
+              marginLeft: "10px",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Typography>Sort By:</Typography>
             <FormControl>
               <Select
@@ -88,22 +113,32 @@ const Page = () => {
                 onChange={handleChange}
                 sx={{ width: "96px", height: "28px" }}
               >
-                <MenuItem value="Best Match">Best Match</MenuItem>
+                <MenuItem value="earphone">Earphone</MenuItem>
+                <MenuItem value="bag">bag</MenuItem>
+                <MenuItem value="watch">watch</MenuItem>
+                <MenuItem value="sofa">sofa</MenuItem>
               </Select>
             </FormControl>
           </div>
-          <div style={{ display: "flex", marginLeft: "20px" }}>
+          <div
+            style={{
+              display: "flex",
+              marginLeft: "20px",
+              alignItems: "center",
+            }}
+          >
             <div style={{ display: "flex" }}>
               <Typography>View:</Typography>
               <GridViewIcon onClick={gridDisplay} />
               <ListIcon onClick={listDisplay} />
             </div>
             <div>
-              <input
+              <TextField
                 type="text"
-                style={{
-                  height: "30px",
-                  width: "162px",
+                border-radius="50px"
+                sx={{
+                  width: { xs: "auto", sm: "auto", md: "auto" },
+                  height: { xs: "auto", sm: "auto", md: "auto" },
                   marginLeft: "20px",
                   justifyContent: "center",
                 }}
@@ -141,7 +176,7 @@ const Page = () => {
                 textDecoration: "none",
               }}
             >
-              {accessories.map((product, index) => {
+              {product.map((product, index) => {
                 return (
                   <Box
                     onClick={(e) => productinfoHandler(product, index, e)}
@@ -245,73 +280,7 @@ const Page = () => {
           </Container>
         </div>
       </div>
-      <div>
-        <Container>
-          <Grid item xs={12}>
-            {major.map((img, index) => {
-              return (
-                <Grid item sm={4} display="flex">
-                  <Box>
-                    <img src={img.img} width-="200px" height="200px" />
-                  </Box>
-                  <Box sx={{ width: `${displaylist ? "270px" : "270px"}` }}>
-                    <Typography
-                      sx={{
-                        fontFamily: "#151875",
-                        fontWeight: 700,
-                        fontSize: 18,
-                        color: "#151875",
-                      }}
-                    >
-                      {img.title}
-                    </Typography>
-                    <div>
-                      <CircleIcon
-                        sx={{ color: "#DE9034", fontSize: "small" }}
-                      />
-                      <CircleIcon
-                        sx={{ color: "#EC42A2", fontSize: "small" }}
-                      />
-                      <CircleIcon
-                        sx={{ color: "#8568FF", fontSize: "small" }}
-                      />
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
 
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontFamily: "Josefin Sans",
-                          fontSize: 14,
-                          marginRight: "10px",
-                          color: "#151875",
-                        }}
-                      >
-                        {img.newprice}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontFamily: "Josefin Sans",
-                          fontSize: 14,
-                          textDecoration: "line-through",
-                          color: "#FB2448",
-                        }}
-                      >
-                        {img.Price}
-                      </Typography>
-                    </div>
-                  </Box>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Container>
-      </div>
       <Box
         style={{
           margin: "30px",

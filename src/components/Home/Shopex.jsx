@@ -13,28 +13,53 @@ const ShopexOffer = ({ title, product }) => {
       >
         {title}
       </Typography>
-      <Container>
+      <div
+        style={{
+          width: "100%",
+          // margin: "2%",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      >
         <Grid
           container
           xs={12}
           item
           spacing={1}
           sx={{
-            display: { md: "flex" },
+            display: { md: "flex", sm: "flex", lg: "flex" },
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "center",
             textDecoration: "none",
             alignItems: "center",
           }}
         >
           {product.map((product, index) => {
             return (
-              <Box key={index} width="270px">
+              <Box
+                key={index}
+                sx={{
+                  m: 1,
+                  width: {
+                    xs: "100%",
+                    sm: "auto",
+                    lg: "auto",
+                    lg: "auto",
+                    xl: "auto",
+                  },
+                }}
+              >
                 <Grid container>
                   <Grid
                     item
-                    xs={3}
-                    sx={{ display: "grid", placeItems: "center" }}
+                    md={2}
+                    xs={12}
+                    sm={2}
+                    lg={2}
+                    xl={3}
+                    spacing={2}
+                    sx={{ display: "grid" }}
                   >
                     <img
                       src={product.img}
@@ -45,7 +70,7 @@ const ShopexOffer = ({ title, product }) => {
                         margin: "0 auto",
                       }}
                     />
-                    <Paper sx={{ width: "200px" }}>
+                    <Paper sx={{ width: { xs: "100%", sm: "200px" } }}>
                       <Typography
                         sx={{
                           fontFamily: "Josefin Sans",
@@ -73,7 +98,7 @@ const ShopexOffer = ({ title, product }) => {
             );
           })}
         </Grid>
-      </Container>
+      </div>
     </>
   );
 };

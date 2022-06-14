@@ -27,16 +27,17 @@ const TopCategory = () => {
       >
         Top Categories
       </Typography>
-      <Container>
+      <div>
         <Grid
           container
           xs={12}
           item
           spacing={1}
           sx={{
-            display: { md: "flex" },
+            // display: { md: "flex" },
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "center",
+            alignItems: "center",
             textDecoration: "none",
           }}
         >
@@ -44,11 +45,21 @@ const TopCategory = () => {
             return (
               <Box
                 key={index}
-                width="270px"
+                sx={{
+                  background: "#F2F0FF",
+                  m: 1,
+                  width: {
+                    xs: "100%",
+                    sm: "auto",
+                    lg: "auto",
+                    lg: "auto",
+                    xl: "auto",
+                  },
+                }}
                 onClick={() => productinfoHandler(product, index)}
               >
                 <Grid container>
-                  <Grid item md={3} xs={12} sm={12}>
+                  <Grid item md={6} xs={12} sm={6} lg={6} xl={3}>
                     <FavoriteBorderIcon
                       sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
                     />
@@ -62,7 +73,7 @@ const TopCategory = () => {
                       height="178px"
                       width="178px"
                     />
-                    <Paper sx={{ width: "200px" }}>
+                    <Paper sx={{ width: { xs: "100%", sm: "200px" } }}>
                       <Typography
                         sx={{
                           fontFamily: "Lato",
@@ -89,7 +100,7 @@ const TopCategory = () => {
             );
           })}
         </Grid>
-      </Container>
+      </div>
     </>
   );
 };

@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <>
       {/* <SwipeableTextMobileStepper /> */}
-      {/* <Carousels /> */}
+      <Carousels />
       <FeatureProducts />
 
       <LatestProduct />

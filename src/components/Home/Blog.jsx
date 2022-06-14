@@ -50,7 +50,15 @@ const Blog = () => {
       >
         Latest Blog
       </Typography>
-      <Container>
+      <div
+        style={{
+          width: "96%",
+          margin: "2%",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      >
         <Grid
           container
           xs={12}
@@ -59,22 +67,40 @@ const Blog = () => {
           sx={{
             display: { md: "flex" },
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "center",
+            alignItems: "center",
             textDecoration: "none",
           }}
         >
           {blogdata.map((product, index) => {
             return (
-              <Box key={index}>
+              <Box
+                key={index}
+                sx={{
+                  m: 1,
+                  width: {
+                    xs: "100%",
+                    sm: "auto",
+                    lg: "auto",
+                    lg: "auto",
+                    xl: "auto",
+                  },
+                }}
+              >
                 <Grid container>
-                  <Grid item md={3} xs={12} sm={12}>
+                  <Grid item md={3} xs={12} sm={3} lg={3}>
                     <img
                       src={product.img}
                       alt="logo"
-                      height="255px"
-                      width="370px"
+                      width="275px"
+                      height="250px"
                     />
-                    <Paper sx={{ width: "370px", mb: 30 }}>
+                    <Paper
+                      sx={{
+                        width: { xs: "100%", sm: "275px" },
+                        mb: { xs: "10px", sm: 30, md: 30 },
+                      }}
+                    >
                       <div
                         style={{
                           display: "flex",
@@ -163,7 +189,7 @@ const Blog = () => {
             );
           })}
         </Grid>
-      </Container>
+      </div>
     </>
   );
 };
