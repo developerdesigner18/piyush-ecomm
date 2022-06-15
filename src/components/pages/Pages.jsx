@@ -21,7 +21,7 @@ const Page = () => {
   //const product = accessories;
   const { cart, setCart } = useContext(Cart);
   const [product, setProduct] = React.useState(accessories);
-
+  const [search, setSearch] = React.useState();
   const [sort, setSort] = React.useState();
   const [displaylist, setDisplaylist] = React.useState(false);
 
@@ -49,6 +49,13 @@ const Page = () => {
     console.log(event.target.value);
   };
 
+  // const searchHandler = (e) => {
+  //   setSearch(e.target.value);
+  //   const filterproduct = accessories.filter(
+  //     (product) => product.title === search
+  //   );
+  //   setProduct(filterproduct);
+  // };
   const addtocartHandler = (product, index, e) => {
     e.stopPropagation();
 
@@ -136,6 +143,8 @@ const Page = () => {
               <TextField
                 type="text"
                 border-radius="50px"
+                // value={search}
+                // onChange={searchHandler}
                 sx={{
                   width: { xs: "auto", sm: "auto", md: "auto" },
                   height: { xs: "auto", sm: "auto", md: "auto" },

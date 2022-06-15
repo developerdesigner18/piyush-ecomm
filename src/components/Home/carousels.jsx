@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { Box, fontWeight } from "@mui/system";
-import styles from "../Home/style.css";
+import style from "./style.css";
 const Carousels = () => {
   return (
     <>
@@ -11,22 +11,32 @@ const Carousels = () => {
           height: "450px",
           background: "#F2F0FF",
           display: "flex",
+          justifyContent: { lg: "space-around" },
         }}
       >
-        <div style={{ display: "flex", width: "50%", position: "static" }}>
+        <div style={{ display: "flex" }}>
           <div>
             <img
+              width="100%"
+              height="60%"
               src="/blogpage/lamp.png"
               alt="lamp"
               justifyContent="flex-start"
             />
           </div>
 
-          <div>
+          <div
+            style={{
+              textAlign: "justify",
+              margin: "auto",
+              alignItems: "center",
+            }}
+          >
             <Typography sx={{ color: "deeppink" }}>
               Best Furniture for your Castle...
             </Typography>
             <Typography
+              variant="h4"
               sx={{
                 fontFamily: "Josefin Sans",
                 fontSize: "auto",
@@ -35,11 +45,10 @@ const Carousels = () => {
                 fontWeight: "Bold",
               }}
             >
-              New Furniture collection Trends in 2020
+              New Furniture collection Trends in 2022
             </Typography>
-            <Typography>
-              lorem Ipsum is not simply random text. It has roots in a piece of
-              classical Latin years old
+            <Typography variant="h6">
+              lorem Ipsum is not simply random text. Latin years old
             </Typography>
             <Button sx={{ backgroundColor: "deeppink", color: "white" }}>
               Shop Now
@@ -47,8 +56,8 @@ const Carousels = () => {
           </div>
         </div>
 
-        <div className="styles.img" width="500px">
-          {/* <img src="blogpage/sofa.png" height="350px" width="40%" /> */}
+        <div className="img">
+          <img src="/blogpage/sofa.png" height="350px" />
         </div>
       </Box>
     </>

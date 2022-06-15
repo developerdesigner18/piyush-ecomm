@@ -1,3 +1,5 @@
 .img {
-  background-image: url("../../image/sofa.png");
+  background-image: radial-gradient(circle, #ecd2fa 40%, #ecd2fa 40%, #f2f0ff);
+  width: "auto";
+  margin-top: auto;
 }
