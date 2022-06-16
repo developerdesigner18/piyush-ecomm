@@ -11,7 +11,7 @@ const Carousels = () => {
           height: "450px",
           background: "#F2F0FF",
           display: "flex",
-          justifyContent: { lg: "space-around" },
+          justifyContent: { lg: "space-evenly" },
         }}
       >
         <div style={{ display: "flex" }}>

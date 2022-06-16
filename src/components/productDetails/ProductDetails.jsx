@@ -8,6 +8,10 @@ import BasicRating from "./rating";
 import RelatedProducts from "./RelatedProducts";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
 
 const ProductDetails = () => {
   const location = useLocation();
@@ -22,104 +26,153 @@ const ProductDetails = () => {
   const productdetail = ["Description", "Additional Info", "Reviews", "Video"];
   return (
     <div>
-      <Paper>
-        <Box>
-          <Container>
-            <Grid item xs={12} display="flex" flexDirection="row">
-              <Grid container xs={2} display="flex" flexDirection="column">
-                {minor.map((img, index) => {
-                  return (
-                    <Box>
-                      <Grid item xs={3}>
-                        <Box>
-                          <img src={img.img} width="151px" height="155px" />
-                        </Box>
-                      </Grid>
-                    </Box>
-                  );
-                })}
-              </Grid>
+      {/* <Box>
+        <Container>
+          <div display="flex" flexDirection="row">
+            <div display="flex" flexDirection="column">
               {minor.map((img, index) => {
                 return (
-                  <Grid item sm={4} display="flex">
-                    <Box
+                  <Box>
+                    <div>
+                      <img src={img.img} width="151px" height="155px" />
+                    </div>
+                  </Box>
+                );
+              })}
+            </div>
+            {minor.map((img, index) => {
+              return (
+                <div display="flex">
+                  <Box
+                    sx={{
+                      width: "400px",
+                      flexdirection: "column",
+                      justifycontent: "center",
+                      alignitems: "flex-start",
+                      margin: "auto",
+                    }}
+                  >
+                    <Typography
                       sx={{
-                        width: "400px",
-                        flexdirection: "column",
+                        fontFamily: "#151875",
+                        fontWeight: 700,
+                        fontSize: 18,
+                        color: "#151875",
+                      }}
+                    >
+                      {img.title}
+                    </Typography>
+                    <BasicRating />
+                    <div>
+                      <Typography
+                        sx={{
+                          fontFamily: "Josefin Sans",
+                          fontSize: 14,
+                          textDecoration: "line-through",
+                          color: "#FB2448",
+                        }}
+                      >
+                        {img.Price}
+                      </Typography>
+                    </div>
+                    <div
+                      style={{
+                        display: "block",
                         justifycontent: "center",
                         alignitems: "flex-start",
-                        margin: "auto",
                       }}
                     >
                       <Typography
                         sx={{
-                          fontFamily: "#151875",
-                          fontWeight: 700,
-                          fontSize: 18,
-                          color: "#151875",
+                          fontFamily: "Josefin Sans",
+                          fontSize: 14,
                         }}
                       >
-                        {img.title}
+                        {img.text}
                       </Typography>
-                      <BasicRating />
-                      <div
-                      // style={{
-                      //   display: "flex",
-                      //   justifyContent: "flex-start",
-                      // }}
-                      >
-                        <Typography
-                          sx={{
-                            fontFamily: "Josefin Sans",
-                            fontSize: 14,
-                            textDecoration: "line-through",
-                            color: "#FB2448",
-                          }}
+                      <div display="inline-flex">
+                        <Button
+                          sx={{ color: "#151875", fontSize: "16px" }}
+                          onClick={() => addtocartHandler(img)}
                         >
-                          {img.Price}
-                        </Typography>
+                          Add To Cart
+                        </Button>
+                        <FavoriteBorderIcon
+                          sx={{ width: "15px", height: "13.85px" }}
+                        />
                       </div>
-                      <div
-                        style={{
-                          display: "block",
-                          justifycontent: "center",
-                          alignitems: "flex-start",
-                        }}
-                      >
-                        <Typography
-                          sx={{
-                            fontFamily: "Josefin Sans",
-                            fontSize: 14,
-                          }}
-                        >
-                          {img.text}
-                        </Typography>
-                        <div display="inline-flex">
-                          <Button
-                            sx={{ color: "#151875", fontSize: "16px" }}
-                            onClick={() => addtocartHandler(img)}
-                          >
-                            Add To Cart
-                          </Button>
-                          <FavoriteBorderIcon
-                            sx={{ width: "15px", height: "13.85px" }}
-                          />
-                        </div>
 
-                        <Typography sx={{ color: "#151875" }}>
-                          Categories
-                        </Typography>
-                        <Typography sx={{ color: "#151875" }}>Tags</Typography>
-                        <Typography sx={{ color: "#151875" }}>Share</Typography>
-                      </div>
-                    </Box>
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </Container>
-        </Box>
-      </Paper>
+                      <Typography sx={{ color: "#151875" }}>
+                        Categories
+                      </Typography>
+                      <Typography sx={{ color: "#151875" }}>Tags</Typography>
+                      <Typography sx={{ color: "#151875" }}>Share</Typography>
+                    </div>
+                  </Box>
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </Box> */}
+      <div
+        style={{
+          display: "flex",
+          marginTop: "50px",
+          textAlign: "justify",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div>
+          {minor.map((img, index) => {
+            return (
+              <div>
+                <img src={img.img} width="200px" height="200px" />
+              </div>
+            );
+          })}
+        </div>
+        <div>
+          {minor.map((data, index) => {
+            return (
+              <>
+                <div sx={{ maxWidth: "auto" }}>
+                  <Typography
+                    sx={{
+                      color: "#0D134E",
+                      fontFamily: "Josefin Sans",
+                      fontSize: "36px",
+                    }}
+                  >
+                    {data.title}
+                  </Typography>
+                  <BasicRating />
+                  <div style={{ display: "flex" }}>
+                    <Typography sx={{ marginRight: "10px" }}>
+                      {data.Price}
+                    </Typography>
+                    <Typography sx={{ color: "red" }}>253</Typography>
+                  </div>
+                  <Typography>Color</Typography>
+                  <Typography>
+                    lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                  </Typography>
+                  <div sx={{ alignItems: "center", justifyContent: "center" }}>
+                    <Button>Add to Cart</Button>
+                    <FavoriteBorderIcon />
+                  </div>
+
+                  <Typography>Categories</Typography>
+                  <Typography>Tags</Typography>
+                  <Typography>Share</Typography>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
       <Box sx={{ bgcolor: "#F9F8FE" }}>
         <div
           style={{
@@ -194,7 +247,7 @@ const ProductDetails = () => {
         </div>
       </Box>
       <RelatedProducts />
-      <Box
+      {/* <Box
         style={{
           margin: "30px",
           display: "grid",
@@ -204,7 +257,7 @@ const ProductDetails = () => {
         }}
       >
         <img src={newsletter.img2} height="50px" width="auto" />
-      </Box>
+      </Box> */}
     </div>
   );
 };

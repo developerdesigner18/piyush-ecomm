@@ -228,6 +228,8 @@ export const accessories = [
   {
     id: 1256,
     img: "/accessories/image 9.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     Price: 45,
     category: "sofa",
@@ -236,6 +238,8 @@ export const accessories = [
   {
     id: 1264,
     img: "/accessories/image10.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     Price: 45,
     category: "camera",
@@ -244,6 +248,8 @@ export const accessories = [
   {
     id: 4256,
     img: "/accessories/image11.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     category: "earphone",
     Price: 45,
@@ -252,6 +258,8 @@ export const accessories = [
   {
     id: 852,
     img: "/accessories/image12.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     Price: 45,
     category: "bag",
@@ -259,6 +267,8 @@ export const accessories = [
   },
   {
     id: 233,
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     img: "/accessories/image1.png",
     newprice: "$25",
     Price: 45,
@@ -268,6 +278,8 @@ export const accessories = [
   {
     id: 1526,
     img: "/accessories/image2.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     Price: 45,
     category: "sofa",
@@ -276,15 +288,18 @@ export const accessories = [
   {
     id: 782,
     img: "/accessories/image3.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     category: "earphone",
-
     Price: 45,
     title: "vel elit esumond",
   },
   {
     id: 4526,
     img: "/accessories/image4.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     Price: 45,
     category: "watch",
@@ -294,6 +309,8 @@ export const accessories = [
     id: 152,
     img: "/accessories/image5.png",
     newprice: "$25",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     Price: 45,
     category: "watch",
     title: "vel elit esumond",
@@ -301,6 +318,8 @@ export const accessories = [
   {
     id: 223,
     img: "/accessories/image6.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     Price: 45,
     category: "bag",
@@ -309,6 +328,8 @@ export const accessories = [
   {
     id: 234,
     img: "/accessories/image7.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     Price: "45",
     category: "sofa",
@@ -317,6 +338,8 @@ export const accessories = [
   {
     id: 234,
     img: "/accessories/image8.png",
+    detail:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text.",
     newprice: "$25",
     Price: "45",
     category: "sofa",

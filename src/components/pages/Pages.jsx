@@ -17,6 +17,7 @@ import { Cart } from "../../context/cartContext";
 
 import { newsletter } from "../../data";
 import Sidebar from "./Sidebar";
+import Listview from "./Listview";
 const Page = () => {
   //const product = accessories;
   const { cart, setCart } = useContext(Cart);
@@ -158,139 +159,141 @@ const Page = () => {
       </div>
       <div
         style={{
-          display: `${displaylist ? "flex" : "block"}`,
-          //   flexDirection: "column",
+          display: "flex",
+          flexDirection: "column",
 
           justifyContent: "space-evenly",
           //   textDecoration: "none",
         }}
       >
-        {displaylist && (
-          <div>
-            <Sidebar />
-          </div>
-        )}
-
         <div>
           <Container>
             <Grid
               container
               xs={12}
               item
+              width="96%"
+              m="2%"
               spacing={1}
               sx={{
-                display: { md: `${displaylist ? "block" : "flex"}` },
+                display: { md: "flex", sm: "flex" },
                 flexDirection: "row",
-                // justifyContent: "space-evenly",
+                alignItems: "center",
+                justifyContent: "space-evenly",
                 textDecoration: "none",
               }}
             >
-              {product.map((product, index) => {
-                return (
-                  <Box
-                    onClick={(e) => productinfoHandler(product, index, e)}
-                    key={index}
-                    sx={{
-                      width: `${displaylist ? "500px" : "270px"}`,
-                      bgcolor: "#FFFFFF",
-                    }}
-                    margin="10px"
-                  >
-                    <Grid container>
-                      <Grid
-                        item
-                        sm={`${displaylist ? 12 : 3}`}
-                        md={`${displaylist ? 12 : 3}`}
-                        xs={6}
-                        sx={{
-                          display: { md: `${displaylist ? "flex" : "block"}` },
-                        }}
-                      >
-                        <Box
-                          height="280px"
-                          justifyContent="center"
-                          alignItems="center"
-                          margin="auto"
+              {displaylist && <Listview products={product} />}
+              {!displaylist &&
+                product.map((product, index) => {
+                  return (
+                    <Box
+                      onClick={(e) => productinfoHandler(product, index, e)}
+                      key={index}
+                      sx={{
+                        width: "auto",
+                        bgcolor: "#FFFFFF",
+                      }}
+                      margin="10px"
+                    >
+                      <Grid container>
+                        <Grid
+                          item
+                          sm={4}
+                          md={4}
+                          xs={6}
+                          // sx={{
+                          //   display: { md: "flex", sm: "flex" },
+                          // }}
                         >
-                          <FavoriteBorderIcon
-                            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-                          />
-                          <ShoppingCartIcon
-                            onClick={(e) => addtocartHandler(product, index, e)}
-                            sx={{ display: { xs: "none", md: "flex" } }}
-                          />
-                          <img
-                            src={product.img}
-                            alt="logo"
-                            height={`${displaylist ? "217px" : "201px"}`}
-                            width={`${displaylist ? "313px" : "201px"}`}
-                          />
-                        </Box>
-                        <Box
-                          sx={{ width: `${displaylist ? "270px" : "270px"}` }}
-                        >
-                          <Typography
-                            sx={{
-                              fontFamily: "#151875",
-                              fontWeight: 700,
-                              fontSize: 18,
-                              color: "#151875",
-                            }}
+                          <Box
+                            height="280px"
+                            justifyContent="center"
+                            alignItems="center"
+                            margin="auto"
                           >
-                            {product.title}
-                          </Typography>
-                          <div>
-                            <CircleIcon
-                              sx={{ color: "#DE9034", fontSize: "small" }}
+                            <FavoriteBorderIcon
+                              sx={{
+                                mr: 2,
+                                display: { xs: "none", md: "flex" },
+                              }}
                             />
-                            <CircleIcon
-                              sx={{ color: "#EC42A2", fontSize: "small" }}
+                            <ShoppingCartIcon
+                              onClick={(e) =>
+                                addtocartHandler(product, index, e)
+                              }
+                              sx={{ display: { xs: "none", md: "flex" } }}
                             />
-                            <CircleIcon
-                              sx={{ color: "#8568FF", fontSize: "small" }}
+                            <img
+                              src={product.img}
+                              alt="logo"
+                              height={"201px"}
+                              width={"250px"}
                             />
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-
-                              justifyContent: "center",
-                            }}
-                          >
+                          </Box>
+                          <Box sx={{ width: "270px" }}>
                             <Typography
                               sx={{
-                                fontFamily: "Josefin Sans",
-                                fontSize: 14,
-                                marginRight: "10px",
+                                fontFamily: "#151875",
+                                fontWeight: 700,
+                                fontSize: 18,
                                 color: "#151875",
                               }}
                             >
-                              {product.newprice}
+                              {product.title}
                             </Typography>
-                            <Typography
-                              sx={{
-                                fontFamily: "Josefin Sans",
-                                fontSize: 14,
-                                textDecoration: "line-through",
-                                color: "#FB2448",
+                            <div>
+                              <CircleIcon
+                                sx={{ color: "#DE9034", fontSize: "small" }}
+                              />
+                              <CircleIcon
+                                sx={{ color: "#EC42A2", fontSize: "small" }}
+                              />
+                              <CircleIcon
+                                sx={{ color: "#8568FF", fontSize: "small" }}
+                              />
+                            </div>
+                            <div
+                              style={{
+                                display: "flex",
+                                alignItems: "center",
+
+                                justifyContent: "center",
                               }}
                             >
-                              {product.Price}
-                            </Typography>
-                          </div>
-                        </Box>
+                              <Typography
+                                sx={{
+                                  fontFamily: "Josefin Sans",
+                                  fontSize: 14,
+                                  marginRight: "10px",
+                                  color: "#151875",
+                                }}
+                              >
+                                {product.newprice}
+                              </Typography>
+                              <Typography
+                                sx={{
+                                  fontFamily: "Josefin Sans",
+                                  fontSize: 14,
+                                  textDecoration: "line-through",
+                                  color: "#FB2448",
+                                }}
+                              >
+                                {product.Price}
+                              </Typography>
+                            </div>
+                          </Box>
+                        </Grid>
                       </Grid>
-                    </Grid>
-                  </Box>
-                );
-              })}
+                    </Box>
+                  );
+                })}
             </Grid>
           </Container>
         </div>
       </div>
 
-      <Box
+      {/* <Box
         style={{
           margin: "30px",
           display: "grid",
@@ -298,7 +301,7 @@ const Page = () => {
         }}
       >
         <img src={newsletter.img2} height="50px" width="auto" />
-      </Box>
+      </Box> */}
     </>
   );
 };

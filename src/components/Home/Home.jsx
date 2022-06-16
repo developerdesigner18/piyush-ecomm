@@ -5,7 +5,7 @@ import FeatureProducts from "./FeaturedProducts";
 import LatestProduct from "./LatestProduct";
 import Newsletter from "./Newsletter";
 import ShopexOffer from "./Shopex";
- import Sofa from "./Sofa";
+import Sofa from "./Sofa";
 import TopCategory from "./Topcategory";
 import Trending from "./Trending";
 import { shopexOffer } from "../../data";
@@ -26,9 +26,9 @@ const Home = () => {
       <ShopexOffer title="What Shopex Offer!" product={product} />
       <Sofa />
       <Trending />
-      {/* <DiscountItem /> */}
+      <DiscountItem />
       <TopCategory />
-      {/* <Newsletter /> */}
+      <Newsletter />
       <Blog />
     </>
   );
