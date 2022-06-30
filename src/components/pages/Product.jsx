@@ -18,7 +18,7 @@ import { Cart } from "../../context/cartContext";
 import { newsletter } from "../../data";
 import Sidebar from "./Sidebar";
 import Listview from "./Listview";
-const Page = () => {
+const Product = () => {
   //const product = accessories;
   const { cart, setCart } = useContext(Cart);
   const [product, setProduct] = React.useState(accessories);
@@ -212,18 +212,15 @@ const Page = () => {
                             alignItems="center"
                             margin="auto"
                           >
-                            <FavoriteBorderIcon
-                              sx={{
-                                mr: 2,
-                                display: { xs: "none", md: "flex" },
-                              }}
-                            />
-                            <ShoppingCartIcon
-                              onClick={(e) =>
-                                addtocartHandler(product, index, e)
-                              }
-                              sx={{ display: { xs: "none", md: "flex" } }}
-                            />
+                            <div style={{ display: "flex" }}>
+                              <FavoriteBorderIcon sx={{ mr: 1 }} />
+                              <ShoppingCartIcon
+                                onClick={(e) =>
+                                  addtocartHandler(product, index, e)
+                                }
+                                sx={{ mr: 1 }}
+                              />
+                            </div>
                             <img
                               src={product.img}
                               alt="logo"
@@ -306,4 +303,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Product;

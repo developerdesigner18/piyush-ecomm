@@ -34,7 +34,7 @@ const FeatureProduct = () => {
       <Typography
         variant="h3"
         sx={{
-          color: "#1A0B5B",
+          
           fontFamily: "Josefin Sans",
           fontSize: { xs: "30px", sm: "42px", md: "42px", xl: "42px" },
         }}
@@ -88,7 +88,6 @@ const FeatureProduct = () => {
                         onClick={(e) => addtocartHandler(product, index, e)}
                         sx={{ mr: 1 }}
                       />
-                      <ZoomInIcon />
                     </div>
 
                     <img

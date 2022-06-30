@@ -5,7 +5,7 @@ export const featureProduct = [
     title: "Cantelliva Chair",
     code: "Y523201",
     Price: 42,
-    name: "evertheless, Levantine and MSA are not mutually intelligible. Levantine speakers often call their l",
+    name: "evertheless, Levantine and MSA are not . Levantine speakers often call their ",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const featureProduct = [
     title: "Cantellivr Chair",
     code: "Y524201",
     Price: 45,
-    name: "evertheless, Levantine and MSA are not mutually intelligible.",
+    name: "evertheless, Levantine and MSA are not . Levantine speakers often call their",
   },
   {
     id: 3,

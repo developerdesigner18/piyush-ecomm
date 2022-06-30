@@ -2,7 +2,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Box, Typography, Grid, Container } from "@mui/material";
 import { blogpage } from "../../data";
 import { useState } from "react";
-
+import style from "../blog/blog.css";
 const Blog = () => {
   const bloginfo = blogpage;
   const [open, setOpen] = useState();
@@ -47,12 +47,11 @@ const Blog = () => {
       >
         <Typography
           sx={{
-            display: "flex",
             alignItems: "center",
             justifyContent: "center",
             m: "auto",
-            color:"#101750",
-            fontSize:"36PX"
+            color: "#101750",
+            fontSize: "36PX",
           }}
         >
           {" "}
@@ -80,8 +79,8 @@ const Blog = () => {
                     <img
                       src={product.img}
                       alt="logo"
-                      height="453px"
-                      width="870px"
+                      height="auto"
+                      width="100%"
                     />
                     <Box>
                       <div
@@ -123,6 +122,7 @@ const Blog = () => {
                         </Typography>
                       </div>
                       <div
+                        className="bottom"
                         style={{
                           width: "852",
                           height: "143px",
@@ -147,7 +147,7 @@ const Blog = () => {
                             fontSize: 14,
                             color: "#151875",
                             textAlign: "left",
-                            mb: "10px",
+                            mb: "20px",
                           }}
                         >
                           Lorem ipsum dolor sit amet, consectetur adipiscing

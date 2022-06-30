@@ -72,114 +72,7 @@ const LatestProduct = () => {
           </div>
         ))}
       </div>
-      {/* <div
-        style={{
-          width: "96%",
-          margin: "2%",
 
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Grid
-          container
-          spacing={1}
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            textDecoration: "none",
-          }}
-        >
-          {product.map((product, index) => {
-            console.log(product, "😂😂😂");
-            return (
-              <Box
-                key={index}
-                sx={{
-                  background: "#F2F0FF",
-                  m: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  width: {
-                    xs: "100%",
-                    md: "20%",
-                  },
-                }}
-                onClick={() => productinfoHandler(product, index)}
-              >
-                <Grid>
-                  <Grid item md={3} xs={12} lg={4}>
-                    <div style={{ display: "flex" }}>
-                      <FavoriteBorderIcon sx={{ mr: 1 }} />
-                      <ShoppingCartIcon
-                        onClick={(e) => addtocartHandler(product, index, e)}
-                        sx={{ mr: 1 }}
-                      />
-                      <ZoomInIcon />
-                    </div>
-
-                    <img
-                      src={product.img}
-                      alt="logo"
-                      height="200px"
-                      width="200px"
-                      justifyContent="center"
-                      alignItems="center"
-                    />
-                    <Paper sx={{ width: { xs: "100%", sm: "200px" } }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Typography
-                          sx={{
-                            fontFamily: "Josefin Sans",
-                            fontWeight: 700,
-                            fontSize: 16,
-                            color: "#151875",
-                          }}
-                        >
-                          {product.title}
-                        </Typography>
-                        <div
-                          style={{
-                            display: "flex",
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              fontFamily: "Josefin Sans",
-                              fontSize: 14,
-                              color: "#151875",
-                              mr: 1,
-                            }}
-                          >
-                            {product.Price}
-                          </Typography>
-                          <Typography
-                            sx={{
-                              fontFamily: "Josefin Sans",
-                              fontSize: 14,
-                              textDecoration: "line-through",
-                              color: "#FB2448",
-                            }}
-                          >
-                            {product.newprice}
-                          </Typography>
-                        </div>
-                      </div>
-                    </Paper>
-                  </Grid>
-                  <Grid item md={9}></Grid>
-                </Grid>
-              </Box>
-            );
-          })}
-        </Grid>
-      </div> */}
       <Container
         sx={{
           width: { xs: "100%", md: "70%", sm: "80%" },
@@ -202,6 +95,7 @@ const LatestProduct = () => {
                 sx={{
                   width: { xs: "100%", md: "auto", sm: "auto" },
                 }}
+                onClick={() => productinfoHandler(product, index)}
               >
                 <div style={{ background: "#F2F0FF" }}>
                   <div style={{ display: "flex" }}>
@@ -210,7 +104,6 @@ const LatestProduct = () => {
                       onClick={(e) => addtocartHandler(product, index, e)}
                       sx={{ mr: 1 }}
                     />
-                    <ZoomInIcon />
                   </div>
                   <CardMedia
                     component="img"

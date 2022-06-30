@@ -65,18 +65,18 @@ const Trending = () => {
                     xl: "auto",
                   },
                 }}
-                boxShadow="#31208A"
                 onClick={() => productinfoHandler(product, index)}
+                boxShadow="#31208A"
               >
                 <Grid container>
                   <Grid item md={3} xs={12} sm={3} lg={3} xl={3}>
-                    <FavoriteBorderIcon
-                      sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-                    />
-                    <ShoppingCartIcon
-                      onClick={(e) => addtocartHandler(product, index, e)}
-                      sx={{ display: { xs: "none", md: "flex" } }}
-                    />
+                    <div style={{ display: "flex" }}>
+                      <FavoriteBorderIcon sx={{ mr: 1 }} />
+                      <ShoppingCartIcon
+                        onClick={(e) => addtocartHandler(product, index, e)}
+                        sx={{ mr: 1 }}
+                      />
+                    </div>
                     <img
                       src={product.img}
                       alt="logo"

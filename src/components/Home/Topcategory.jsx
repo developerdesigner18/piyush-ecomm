@@ -60,13 +60,13 @@ const TopCategory = () => {
               >
                 <Grid container>
                   <Grid item md={6} xs={12} sm={6} lg={6} xl={3}>
-                    <FavoriteBorderIcon
-                      sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-                    />
-                    <ShoppingCartIcon
-                      onClick={(e) => addtocartHandler(product, index, e)}
-                      sx={{ display: { xs: "none", md: "flex" } }}
-                    />
+                    <div style={{ display: "flex" }}>
+                      <FavoriteBorderIcon sx={{ mr: 1 }} />
+                      <ShoppingCartIcon
+                        onClick={(e) => addtocartHandler(product, index, e)}
+                        sx={{ mr: 1 }}
+                      />
+                    </div>
                     <img
                       src={product.img}
                       alt="logo"

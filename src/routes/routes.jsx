@@ -1,6 +1,6 @@
 import Home from "../components/Home/Home";
 import { Route, Routes } from "react-router-dom";
-import Page from "../components/pages/Pages";
+import Page from "../components/pages/Product";
 import ProductDetails from "../components/productDetails/ProductDetails";
 import LoginPage from "../components/login/Login";
 import RegisterPage from "../components/register/Register";
@@ -11,14 +11,14 @@ import About from "../components/about/About";
 import ContactUs from "../components/contactus/ContactUs";
 import ErrorPage from "../components/errorpage/ErrorPage";
 import Faq from "../components/faq/Faq";
-import Listview from "../components/pages/Listview";
+import Product from "../components/pages/Product";
 
 const RoutesPage = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Page />} />
+        <Route path="/product" element={<Product />} />
         <Route path="/productdetail" element={<ProductDetails />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
